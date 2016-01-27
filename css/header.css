@@ -1,0 +1,91 @@
+#page-header {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    background-color: #00bcd9;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 1000px) {
+    #page-header-wrapper {
+        width: 1000px;
+    }
+}
+
+@media (max-width: 999px) and (min-width: 760px) {
+    #page-header-wrapper {
+        width: 760px;
+    }
+}
+
+@media (max-width: 759px) and (min-width: 480px) {
+    #page-header-wrapper {
+        width: 480px;
+    }
+}
+
+#page-header-wrapper {
+    height: 100%;
+    margin: auto;
+}
+
+#page-header-logo {
+    display: inline-block;
+    height: 100%;
+    padding-left: 10px;
+    -webkit-transition: background 0.2s;
+    -moz-transition: background 0.2s;
+    -o-transition: background 0.2s;
+    transition: background 0.2s;
+}
+
+#page-header-logo:hover {
+    background-color: #00acc9;
+}
+
+#search-wrapper {
+    display: inline-block;
+    margin-top: 9px;
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.15);
+    vertical-align: top;
+}
+
+#search-field {
+    box-sizing: border-box;
+    width: 500px;
+    height: 30px;
+    padding: 0 10px 0 10px;
+    border: 0;
+    vertical-align: top;
+    outline: none;
+}
+
+#search-field::-webkit-input-placeholder {
+    font-family: "Noto sans Korean";
+    font-size: 12px;
+}
+
+#search-field::-moz-placeholder {
+    font-family: "Noto sans Korean";
+    font-size: 12px;
+}
+
+#search-field::-ms-input-placeholder {
+    font-family: "Noto sans Korean";
+    font-size: 12px;
+}
+
+#search-button {
+    box-sizing: border-box;
+    height: 30px;
+    padding: 0 10px 0 10px;
+    border: 0;
+    background-color: white;
+    outline: none;
+    cursor: pointer;
+}
+
+#search-button-image {
+    width: 15px;
+    margin-top: 3px;
+}

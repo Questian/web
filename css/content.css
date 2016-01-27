@@ -1,0 +1,76 @@
+#content {
+    box-sizing: border-box;
+    width: 1000px;
+    height: 100%;
+    margin: auto;
+    padding-top: 60px;
+}
+
+#find-criteria {
+    width: 100%;
+    height: 340px;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+#left-container {
+    float: left;
+    width: 64%;
+}
+#right-container {
+    float: right;
+    width: 35%;
+}
+
+.box-model {
+    background-color: white;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.quest-card {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 240px;
+    margin: 0 10px 10px 0;
+    padding: 15px 20px 15px 20px;
+}
+.quest-card-header{
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+.profile-image{
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 20px;
+    background-color: gray;
+}
+.user-nickname{
+    font-size: 14px;
+    line-height: 1.3em;
+}
+.time-ago{
+    color: gray;
+    font-size: 12px;
+}
+.user-location{
+    float: right;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+#near-questian {
+    width: 100%;
+    min-height: 400px;
+}
+#near-questian-title {
+    width: 100%;
+    height: 40px;
+    background-color: #00bcd9;
+    color: white;
+    font-size: 14px;
+    font-weight: 900;
+    text-align: center;
+    line-height: 40px;
+}
