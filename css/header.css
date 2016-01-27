@@ -8,19 +8,24 @@
 
 @media (min-width: 1000px) {
     #page-header-wrapper {
-        width: 1000px;
+        width: 950px;
     }
 }
 
 @media (max-width: 999px) and (min-width: 760px) {
     #page-header-wrapper {
-        width: 760px;
+        width: 710px;
     }
 }
 
 @media (max-width: 759px) and (min-width: 480px) {
     #page-header-wrapper {
-        width: 480px;
+        width: 430px;
+    }
+}
+
+@media (max-width: 479px) {
+    #page-header-wrapper {
     }
 }
 
@@ -34,8 +39,6 @@
     height: 100%;
     padding-left: 10px;
     -webkit-transition: background 0.2s;
-    -moz-transition: background 0.2s;
-    -o-transition: background 0.2s;
     transition: background 0.2s;
 }
 
