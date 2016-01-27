@@ -2,6 +2,7 @@
     #content {
         width: 950px;
     }
+
 }
 
 @media (max-width: 999px) and (min-width: 760px) {
@@ -21,7 +22,6 @@
         padding: 0 10px 0 10px;
     }
 }
-
 #content {
     box-sizing: border-box;
     height: 100%;
@@ -36,6 +36,34 @@
     background-color: white;
 }
 
+.button {
+  display: inline-block;
+  height: 45px;
+  float: left;
+  width: 33.3333%;
+  text-align: center;
+  text-decoration: none;
+  color: gray;
+  line-height: 40px;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+
+   border-bottom: 3px solid transparent;
+   transition: 0.5s ease;
+   white-space: nowrap;
+
+}
+
+.button:hover {
+  background-color: #F5F5F5;
+  border-bottom: 3px solid #00bcd9;
+}
+
+
+.button.active {
+  border-bottom: 3px solid #00bcd9;
+}
+
 #left-container {
     float: left;
     width: 64%;
@@ -44,6 +72,7 @@
 #right-container {
     float: right;
     width: 35%;
+    overflow:auto;
 }
 
 .box-model {
@@ -130,6 +159,7 @@
     line-height: 50px;
 }
 
+
 #near-questian {
     width: 100%;
     min-height: 400px;
@@ -144,4 +174,23 @@
     font-weight: 900;
     text-align: center;
     line-height: 40px;
+}
+
+.near-questian-padding-wrapper {
+  padding: 15px 20px 0 0;
+}
+
+.near-people {
+  height: 50px;
+  border-left: 3px solid #00bcd9;
+  margin-bottom: 15px;
+}
+
+.user-introduction {
+    color: gray;
+    font-size: 12px;
+}
+
+.margin-fix {
+  margin-left: 10px;
 }

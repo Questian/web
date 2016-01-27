@@ -61,6 +61,7 @@
     border: 0;
     vertical-align: top;
     outline: none;
+    line-height: 15px;
 }
 
 #search-field::-webkit-input-placeholder {
