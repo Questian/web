@@ -48,7 +48,7 @@
   -webkit-transition: background 0.3s;
   transition: background 0.3s;
 
-   border-bottom: 3px solid transparent;
+   border-bottom: 2px solid transparent;
    transition: 0.5s ease;
    white-space: nowrap;
 
@@ -56,12 +56,12 @@
 
 .button:hover {
   background-color: #F5F5F5;
-  border-bottom: 3px solid #00bcd9;
+  border-bottom: 2px solid #00bcd9;
 }
 
 
 .button.active {
-  border-bottom: 3px solid #00bcd9;
+  border-bottom: 2px solid #00bcd9;
 }
 
 #left-container {
