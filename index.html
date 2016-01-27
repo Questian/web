@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/content.css">
 
     <script src="js/nearQuestianFix.js"></script>
+    <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=22e1ead8e7bd6f1fc4308eaa6c150de7"></script>
     <!--[if lte IE 9]>
         <script src="js/IE9.js"></script>
         <script src="js/html5shiv.min.js"></script>
@@ -39,7 +40,14 @@
 
     <article id="content">
         <section id="find-criteria" class="box-model">
-
+            <script>
+		var container = document.getElementById('find-criteria');
+		var options = {
+			center: new daum.maps.LatLng(33.450701, 126.570667),
+			level: 3
+		};
+		var map = new daum.maps.Map(container, options);
+	</script>
         </section>
 
         <section id="left-container">
