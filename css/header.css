@@ -56,12 +56,12 @@
 }
 
 #page-header-menu a{
-    margin-right: 25px;
+    margin-right: 24px;
 }
 
 #search-field {
     box-sizing: border-box;
-    width: 550px;
+    width: 560px;
     height: 35px;
     padding: 0 5px 0 5px;
     border: 0;

@@ -15,6 +15,7 @@ body {
 }
 
 .cyan-text{
+    font-weight: bold;
     color: #00bcd9;
 }
 
