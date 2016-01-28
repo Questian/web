@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="css/content.css">
 
     <script src="js/nearQuestianFix.js"></script>
-    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
     <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=22e1ead8e7bd6f1fc4308eaa6c150de7"></script>
     <!--[if lte IE 9]>
         <script src="js/IE9.js"></script>
@@ -41,11 +42,55 @@
 
     <article id="content">
         <section id="find-criteria" class="box-model">
-          <a href="#" class="by-distance button active">가까운 거리순</a>
-          <a href="#" class="by-ratedscore button">레이팅 점수순</a>
-          <a href="#" class="by-recently button">최신 업로드순</a>
-          <div id="daum-map"></div>
+            <a href="#" class="by-distance button active">가까운 거리순</a>
+            <a href="#" class="by-ratedscore button">레이팅 점수순</a>
+            <a href="#" class="by-recently button">최신 업로드순</a>
+            <div id="daum-map"></div>
         </section>
+
+        <section id="right-container">
+            <div class="box-model" id="near-questian">
+                <div id="near-questian-title">주변의 추천 퀘스티안</div>
+                <div class="near-questian-padding-wrapper">
+                    <div class="near-people">
+                        <img class="profile-image margin-fix" src="http://i.imgur.com/ZvlD7Li.png" />
+                        <div class="user-nickname">꾸기</div>
+                        <div class="user-introduction">[대출갤러] 뭐든지 맡겨만 주십쇼</div>
+                    </div>
+                    <div class="near-people">
+                        <img class="profile-image margin-fix" src="http://i.imgur.com/Lo09ZvI.jpg">
+                        <div class="user-nickname">Philip</div>
+                        <div class="user-introduction">i would suck your dick if you pay me </div>
+                    </div>
+                    <div class="near-people">
+                        <img class="profile-image margin-fix" src="http://i.imgur.com/ySlwZ4Z.png" />
+                        <div class="user-nickname">씅우</div>
+                        <div class="user-introduction">노가다 경력 11년 백수입니다.</div>
+                    </div>
+                    <div class="near-people">
+                        <img class="profile-image margin-fix" src="http://i.imgur.com/ySlwZ4Z.png" />
+                        <div class="user-nickname">씅우</div>
+                        <div class="user-introduction">노가다 경력 11년 백수입니다.</div>
+                    </div>
+                    <div class="near-people">
+                        <img class="profile-image margin-fix" src="http://i.imgur.com/ySlwZ4Z.png" />
+                        <div class="user-nickname">씅우</div>
+                        <div class="user-introduction">노가다 경력 11년 백수입니다.</div>
+                    </div>
+                    <div class="near-people">
+                        <img class="profile-image margin-fix" src="http://i.imgur.com/ySlwZ4Z.png" />
+                        <div class="user-nickname">씅우</div>
+                        <div class="user-introduction">노가다 경력 11년 백수입니다.</div>
+                    </div>
+                    <div class="near-people">
+                        <img class="profile-image margin-fix" src="http://i.imgur.com/ySlwZ4Z.png" />
+                        <div class="user-nickname">씅우</div>
+                        <div class="user-introduction">노가다 경력 11년 백수입니다.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="left-container">
             <div class="box-model quest-card">
                 <div class="quest-card-padding-wrapper">
@@ -90,35 +135,55 @@
                     <div class="quest-more cyan-text">더 보기</div>
                 </footer>
             </div>
-        </section>
-
-        <section id="right-container">
-            <div class="box-model" id="near-questian">
-                <div id="near-questian-title">주변의 추천 퀘스티안</div>
-                <div class="near-questian-padding-wrapper">
-                    <div class="near-people">
-                      <img class="profile-image margin-fix" src="http://i.imgur.com/ZvlD7Li.png" />
-                      <div class="user-nickname">꾸기</div>
-                      <div class="user-introduction">[대출갤러] 뭐든지 맡겨만 주십쇼</div>
-                    </div>
-                    <div class="near-people">
-                          <img class="profile-image margin-fix" src="http://i.imgur.com/Lo09ZvI.jpg">
-                          <div class="user-nickname">Philip</div>
-                          <div class="user-introduction">i would suck your dick if you pay me </div>
-                    </div>
-                    <div class="near-people">
-                      <img class="profile-image margin-fix" src="http://i.imgur.com/ySlwZ4Z.png" />
-                      <div class="user-nickname">씅우</div>
-                      <div class="user-introduction">노가다 경력 11년 백수입니다.</div>
-                    </div>
-                    </div>
-                  </div>
+            <div class="box-model quest-card">
+                <div class="quest-card-padding-wrapper">
+                    <header class="quest-card-header">
+                        <div class="user-location"><span class="cyan-text">전라남도 목포 신안군</span> 근방</div>
+                        <img class="profile-image" src="image/milkgun.png">
+                        <div class="user-nickname">익명퀘스티안(QPDCA1345)</div>
+                        <div class="time-ago">5분 전</div>
+                        <div class="clear"></div>
+                    </header>
+                    <article class="quest-card-article">
+                        <img class="quest-image" src="image/quest.png">
+                        <blockquote class="quest-reward-text">
+                            휴지좀 갖다줘요 바지도 사오면 더좋고.
+                        </blockquote>
+                        <img class="reward-image" src="image/reward.png">
+                        <blockquote class="quest-reward-text">
+                            휴지만 갖다주면 만원, 바지도 사오면 바지값+2만원이다 이거야~
+                        </blockquote>
+                        <p>씨발 진짜 나 똥마렵거든
+                            <br/>근데 지금 휴지가 없어요
+                            <br/>주변에 님들 저 진짜 한번만 도와주세요
+                            <br/>사례는 10000원 드리구요..
+                            <br/>아 미친 지금 말 하는 동시에 똥 지렸거든요
+                            <br/>바지까지 사오시면 바지값 + 2만원 드릴게요
+                            <br/>하 님들진짜 제발 부탁드립니다.
+                            <br/>저진짜 살면서 똥지린적은 처음이거든요
+                        </p>
+                        <p>씨발 진짜 나 똥마렵거든
+                            <br/>근데 지금 휴지가 없어요
+                            <br/>주변에 님들 저 진짜 한번만 도와주세요
+                            <br/>사례는 10000원 드리구요..
+                            <br/>아 미친 지금 말 하는 동시에 똥 지렸거든요
+                            <br/>바지까지 사오시면 바지값 + 2만원 드릴게요
+                            <br/>하 님들진짜 제발 부탁드립니다.
+                            <br/>저진짜 살면서 똥지린적은 처음이거든요
+                        </p>
+                    </article>
                 </div>
+                <footer class="quest-card-footer">
+                    <div class="quest-status">현재 진행중</div>
+                    <div class="quest-more cyan-text">더 보기</div>
+                </footer>
             </div>
         </section>
         <div class="clear"></div>
     </article>
-<script src="js/daum_map.js"></script>
-<script src="js/common.js"></script>
+
+    <script src="js/daumMap/daum_map.js"></script>
+    <script src="js/daumMap/common.js"></script>
 </body>
+
 </html>

@@ -2,7 +2,6 @@
     #content {
         width: 950px;
     }
-
 }
 
 @media (max-width: 999px) and (min-width: 760px) {
@@ -19,9 +18,11 @@
 
 @media (max-width: 479px) {
     #content {
+        width: 100%;
         padding: 0 10px 0 10px;
     }
 }
+
 #content {
     box-sizing: border-box;
     height: 100%;
@@ -37,42 +38,53 @@
 }
 
 .button {
-  display: inline-block;
-  height: 45px;
-  float: left;
-  width: 33.3333%;
-  text-align: center;
-  text-decoration: none;
-  color: gray;
-  line-height: 40px;
-  -webkit-transition: background 0.3s;
-  transition: background 0.3s;
-
-   border-bottom: 2px solid transparent;
-   transition: 0.5s ease;
-   white-space: nowrap;
-
+    display: inline-block;
+    float: left;
+    width: calc(100% / 3);
+    height: 45px;
+    border-bottom: 2px solid transparent;
+    color: gray;
+    text-align: center;
+    text-decoration: none;
+    line-height: 40px;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
 }
 
 .button:hover {
-  background-color: #F5F5F5;
-  border-bottom: 2px solid #00bcd9;
+    border-bottom: 2px solid #00bcd9;
+    background-color: #f5f5f5;
 }
-
 
 .button.active {
-  border-bottom: 2px solid #00bcd9;
+    border-bottom: 2px solid #00bcd9;
 }
 
-#left-container {
-    float: left;
-    width: 64%;
+@media (min-width: 1000px) {
+    #left-container {
+        float: left;
+        width: 64%;
+    }
 }
 
-#right-container {
-    float: right;
-    width: 35%;
-    overflow:auto;
+@media (max-width: 999px) {
+    #left-container {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1000px) {
+    #right-container {
+        float: right;
+        width: 35%;
+    }
+}
+
+@media (max-width: 999px) {
+    #right-container {
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }
 
 .box-model {
@@ -123,46 +135,54 @@
     font-size: 14px;
 }
 
-.quest-reward-text{
+.quest-reward-text {
     margin: 5px 0 5px 0;
     color: gray;
     font-size: 16px;
 }
-.quest-reward-text:before{
+
+.quest-reward-text:before {
     content: "\"";
     font-family: "Noto Sans Korean";
     font-size: 24px;
     font-weight: 900;
 }
 
-.quest-card-article > p{
+.quest-reward-text:after {
+    content: "\"";
+    font-family: "Noto Sans Korean";
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.quest-card-article > p {
     color: gray;
     font-size: 14px;
 }
 
-.quest-card-footer{
+.quest-card-footer {
     box-sizing: border-box;
     height: 50px;
     padding: 0 20px 0 20px;
     background-color: #eee;
 }
 
-.quest-status{
+.quest-status {
     float: left;
     font-size: 12px;
     line-height: 50px;
 }
 
-.quest-more{
+.quest-more {
     float: right;
     font-size: 12px;
     line-height: 50px;
 }
 
-
 #near-questian {
+    box-sizing: border-box;
     width: 100%;
-    min-height: 400px;
+    min-height: 200px;
 }
 
 #near-questian-title {
@@ -177,13 +197,16 @@
 }
 
 .near-questian-padding-wrapper {
-  padding: 15px 20px 0 0;
+    padding: 0 15px 15px 0;
 }
 
 .near-people {
-  height: 50px;
-  border-left: 3px solid #00bcd9;
-  margin-bottom: 15px;
+    box-sizing: border-box;
+    overflow: auto;
+    height: 50px;
+    border-left: 3px solid #00bcd9;
+    margin-top: 15px;
+    padding-top: 5px;
 }
 
 .user-introduction {
@@ -192,5 +215,5 @@
 }
 
 .margin-fix {
-  margin-left: 10px;
+    margin-left: 10px;
 }
