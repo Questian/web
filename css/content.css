@@ -105,7 +105,6 @@
 .quest-card {
     box-sizing: border-box;
     width: 100%;
-    min-width: 580px;
     min-height: 240px;
     margin: 0 10px 10px 0;
 }
