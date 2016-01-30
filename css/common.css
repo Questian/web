@@ -1,4 +1,3 @@
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 html,
 body {
     width: 100%;
@@ -6,7 +5,11 @@ body {
     margin: 0;
     padding: 0;
     background-color: #eee;
-    font-family: "Noto Sans Korean";
+    font-family: "Noto Sans KR";
+    font-weight: 500;
+    font-smooth: antialiased;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+    text-stroke: 0.6px;
     letter-spacing: -1px;
 }
 
@@ -14,11 +17,15 @@ body {
     clear: both;
 }
 
-.cyan-text{
+.cyan-text {
     font-weight: bold;
     color: #00bcd9;
 }
 
-::selection{
+::-moz-selection {
+    background-color: #c0ecf9;
+}
+
+::selection {
     background-color: #c0ecf9;
 }
