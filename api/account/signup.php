@@ -1,17 +1,19 @@
 <?php
+session_start();
+include '../DBConnect.php';
 
-include './db_connect.php';
+$id = mysql_real_escape_string($_POST['id']);
+$password = md5(mysql_real_escape_string($_POST['password']));
+$email = mysql_real_escape_string($_POST['email']);
+$name = mysql_real_escape_string($_POST['username']);
 
-$id = $_POST['id'];
-$pw = $_POST['password'];
-$email = $_POST['email'];
-$tel = $_POST['telephone'];
-$capcha = $_POST['capcha'];
-
-if(!empty($id) || !empty($pw) || !empty($email)|| !empty($tel) || !empty($capcha)){
-	$signup_result = mysql_query('INSERT INTO users (id, pw, email, tel, capcha, created) VALUES('"$id"', '"$pw"', '"$email"', '"$tel"', '"$capcha'", '"now()"')
+if(mysql_query("INSERT INTO users(id,username, email, password) VALUES('$id','$name','$email', '$password')")){
+	//register succeed
+	echo "register succeed";
 } else {
-	echo 'less paramater'
+	//register failed
+	echo "register failed";
+    echo mysql_error();
 }
 
 ?>

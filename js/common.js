@@ -1,6 +1,4 @@
-$('.button').click(function(){
-  $('.button').removeClass('active');
-  $(this).addClass("active");
-})
+<script type="text/javascript">
 
-// Tab 이동시 content 바뀌는거 추가
+
+</script>

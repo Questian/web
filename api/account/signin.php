@@ -1,18 +1,23 @@
 <?php
-session_start();
-include './db_connect.php';
+include_once '../DBConnect.php';
 
-$id = mysql_real_escape_string($_POST['id']);
+$param_id = $_POST['id'];
+$param_pw = $_POST['password'];
+
+$id = mysql_real_escape_string($param_id);
 $password = md5(mysql_real_escape_string($_POST['password']));
-$email = mysql_real_escape_string($_POST['email']);
-$name = mysql_real_escape_string($_POST['username']);
 
-if(mysql_query("INSERT INTO users(id,username, email, password) VALUES('$id','$username','$email', '$password')")){
-	//register succeed
-	echo "register succeed";
+$result = mysql_query("SELECT * FROM users WHERE id LIKE '$id'");
+$row = mysql_fetch_array($result);
+
+if(!empty($param_id) && !empty($param_pw)){
+	if($row['password'] == md5($param_pw)){
+		echo "Login Succeed";
+	} else {
+		echo "Login Failed : " . mysql_error();
+	}
 } else {
-	//register failed
-	echo "register failed";
+	echo "LESS PARAMETERS";
 }
 
 ?>

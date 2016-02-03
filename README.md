@@ -22,7 +22,7 @@ Web Programming Study 염승우, 윤신필립, 최성국
         Server-Side PHP : 염승우, 윤신필립, 최성국
         Web Front-end, Back-end : 염승우, 윤신필립, 최성국
 
-- 서비스 추상화 [DB schema]
+- 서비스 추상화
     - 퀘스트 콘텐츠(/quest/contentId)
         questTitle : String // 퀘스트 요청 제목
         questTerms : List<QuestTerm> // 퀘스트 조건

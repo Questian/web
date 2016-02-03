@@ -26,7 +26,8 @@
 }
 
 @media (max-width: 479px) {
-    #page-header-wrapper {}
+    #page-header-wrapper {
+    }
 }
 
 #page-header-wrapper {
@@ -35,11 +36,10 @@
 }
 
 #page-header-logo {
-    box-sizing: border-box;
     display: inline-block;
     height: 100%;
-    margin-right: 10px;
-    padding-top: 15px;
+    margin-top: 14px;
+    padding-right: 5px;
 }
 
 #search-wrapper {
@@ -49,44 +49,40 @@
     vertical-align: top;
 }
 
-#page-header-menu {
+#page-header-menu{
     display: inline-block;
     float: right;
     margin-top: 14px;
 }
 
-#page-header-menu a {
+#page-header-menu a{
     margin-right: 24px;
 }
 
 #search-field {
-    outline: none;
+    box-sizing: border-box;
     width: 560px;
     height: 35px;
-    padding: 0 10px 0 10px;
+    padding: 0 5px 0 5px;
     border: 0;
-    font-family: "Noto sans KR";
-    font-size: 14px;
-    font-weight: 300;
     vertical-align: top;
+    outline: none;
+    font-size: 14px;
 }
 
 #search-field::-webkit-input-placeholder {
-    font-family: "Noto sans KR";
+    font-family: "Noto sans Korean";
     font-size: 14px;
-    font-weight: 500;
 }
 
 #search-field::-moz-placeholder {
-    font-family: "Noto sans KR";
+    font-family: "Noto sans Korean";
     font-size: 14px;
-    font-weight: 500;
 }
 
 #search-field::-ms-input-placeholder {
-    font-family: "Noto sans KR";
+    font-family: "Noto sans Korean";
     font-size: 14px;
-    font-weight: 500;
 }
 
 #search-button {
