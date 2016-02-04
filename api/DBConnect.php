@@ -1,10 +1,14 @@
 <?php
-$db_connect = mysql_connect('localhost', 'root', 'asdf25896');
-if (!$db_connect) {
-    die('Could not connect: ' . mysql_error());
+
+$connection = mysqli_connect("127.0.0.1", "root", "asdf25896", "questian");
+
+if (!$connection) {
+    echo "MYSQL CONNECT ERROR";
+    echo "ERROR NUMBER :" . mysqli_connect_errno();
+    echo "ERROR : " . mysqli_connect_error();
+    exit;
 }
-if(!mysql_select_db('questian')){
-	die('Not selected DB : ' . mysql_error());
-}
-mysql_close($link);
-?>
+
+echo "SUCCESSFUL CONNECT MYSQL!";
+
+mysqli_close($connection);
