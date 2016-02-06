@@ -1,5 +1,8 @@
 <?php
 session_start();
+include 'api/DBConnect.php';
+
+error_reporting( E_ALL );
 ?>
 
 <!DOCTYPE html>
@@ -39,8 +42,8 @@ session_start();
             <?php
             $param_id = $_POST['id'];
             $param_pw = $_POST['password'];
-            $id = mysql_real_escape_string($param_id);
-            $password = mysql_real_escape_string($_POST['password']);
+            $id = $mysqli -> real_escape_string($param_id);
+            $password = $mysqli ->real_escape_string($_POST['password']);
 
             $login_msg = '';
 
@@ -48,7 +51,7 @@ session_start();
             //password encrypt
             $password_encrypt = password_hash($password, PASSWORD_BCRYPT);
 
-            $result = mysql_query("SELECT * FROM users WHERE id ='$id'");
+            $result = $mysqli -> query("SELECT * FROM users WHERE id ='$id'");
             $row = mysql_fetch_array($result);
 
             if (!empty($param_id) && !empty($param_pw)) {
@@ -59,7 +62,7 @@ session_start();
                     $login_msg = "login failed" . "cause : " . mysql_error();
                 }
             } else {
-                $login_msg = 'less params';
+                $login_msg = 'less paramas';
             }
 
             echo '<script>alert("' . $login_msg . '")</script>'

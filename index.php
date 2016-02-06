@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+<head>c
     <title>Questian :: Timeline</title>
 
     <meta charset="utf-8">
@@ -67,7 +67,7 @@
                     </div>
                     <div class="near-people">
                         <img class="profile-image margin-fix" src="http://i.imgur.com/Lo09ZvI.jpg">
-                        <div class="user-nickname">Philip</div>
+                        <div class="user-nickname">Philipddasdfasdfa</div>
                         <div class="user-introduction">i would suck your dick if you pay me </div>
                     </div>
                     <div class="near-people">
