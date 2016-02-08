@@ -42,64 +42,30 @@ error_reporting(E_ALL);
 
             <?php
 
+            include_once 'api/classes/DBConnect.php';
+            include_once 'api/classes/Auth.php';
+
+            $db = new DBConnect();
+            $mysqli = $db->mysqli;
+
             $id = $mysqli->real_escape_string($_POST['id']);
             $password = $mysqli->real_escape_string($_POST['password']);
             $email = $mysqli->real_escape_string($_POST['email']);
-            $usernamename = $mysqli->real_escape_string($_POST['username']);
+            $username = $mysqli->real_escape_string($_POST['username']);
             $is_signup = isset($_POST['signup']);
 
-            if(!empty($id) && !empty($password) && !empty($email) && ! empty($username)){
-
-                $password_encrypt = password_hash($password, PASSWORD_BCRYPT);
-                $signup_query = "INSERT INTO users(id,username, email, password) VALUES('$id','$name','$email', '$password_encrypt')";
-
-                if ($mysqli->query($signup_query)) {
-                    //register succeed
-                    echo "register succeed";
-                } else {
-                    //register failed
-                    echo "register failed";
-                    echo $mysqli->error;
-                }
-
-            } else {
-                echo "LESS PARAMETER";
+            if (!empty($id) && !empty($password) && !empty($email) && !empty($username)) {
+                $auth = new Auth($id, $password, $username, $email);
+                $auth->register();
             }
-            //            $param_id = $_POST['id'];
-            //            $param_pw = $_POST['password'];
-            //            $id = $mysqli -> real_escape_string($param_id);
-            //            $password = $mysqli ->real_escape_string($_POST['password']);
-            //
-            //            $login_msg = '';
-            //
-            //            //bcrypt function
-            //            //password encrypt
-            //            $password_encrypt = password_hash($password, PASSWORD_BCRYPT);
-            //
-            //            $signup_query = "INSERT INTO users(id,username, email, password) VALUES('$id','$name','$email', '$password_encrypt')";
-            //
-            //            $result = $mysqli -> query($signup_query);
-            //
-            //            $row = $result->fetch_array(MYSQLI_ASSOC);
-            //
-            //            if (isset($_POST['signup'])&&!empty($param_id) && !empty($param_pw)) {
-            //
-            //                if (password_verify($row['password'], $password_encrypt)) {
-            //                    $login_msg = "login succeed";
-            //                } else {
-            //                    $login_msg = "login failed" . "cause : " . $mysqli->error;
-            //                }
-            //            } else {
-            //                $login_msg = 'less paramas';
-            //            }
-            //
-            //            echo '<script>alert("' . $login_msg . '")</script>'
-            //            ?>
+
+            ?>
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
                 <input type="text" name="id" placeholder="아이디"><br>
                 <input type="password" name="password" placeholder="비밀번호"><br>
                 <input type="password" placeholder="비밀번호 확인"><br>
                 <input type="text" name="username" placeholder="사용자 이름"><br>
+                <input type="email" name="email" placeholder="이메일"><br>
                 <input type="submit" name="signup" value="회원가입">
             </form>
         </div>

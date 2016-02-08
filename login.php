@@ -1,6 +1,7 @@
 <?php
 session_start();
-include 'api/DBConnect.php';
+include_once 'api/classes/DBConnect.php';
+include_once 'api/classes/Auth.php';
 
 error_reporting( E_ALL );
 ?>
@@ -40,32 +41,22 @@ error_reporting( E_ALL );
 
         <div id="page-header-menu">
             <?php
+
+            $db = new DBConnect();
+            $mysqli = $db->mysqli;
+
             $param_id = $_POST['id'];
             $param_pw = $_POST['password'];
             $id = $mysqli -> real_escape_string($param_id);
             $password = $mysqli ->real_escape_string($_POST['password']);
 
-            $login_msg = '';
+            $auth = new Auth();
+            $signin = $auth->signin($id, $password);
 
-            //bcrypt function
-            //password encrypt
-            $password_encrypt = password_hash($password, PASSWORD_BCRYPT);
-
-            $result = $mysqli -> query("SELECT * FROM users WHERE id ='$id'");
-            $row = mysql_fetch_array($result);
-
-            if (!empty($param_id) && !empty($param_pw)) {
-
-                if (password_verify($row['password'], $password_encrypt)) {
-                    $login_msg = "login succeed";
-                } else {
-                    $login_msg = "login failed" . "cause : " . mysql_error();
-                }
-            } else {
-                $login_msg = 'less paramas';
+            if($signin){
+                echo "로그인 성공";
             }
 
-            echo '<script>alert("' . $login_msg . '")</script>'
             ?>
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
                 <input type="text" name="id" placeholder="아이디를 입력해 주세요."></br>
