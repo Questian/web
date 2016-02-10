@@ -43,4 +43,8 @@ class DBConnect
         }
     }
 
+    public function getPDO(){
+        return new PDO('mysql:host='.$this->host.';dbname='.$this->db, $this->user, $this->password, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+    }
+
 }

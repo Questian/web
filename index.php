@@ -40,6 +40,7 @@
         </div>
 
         <div id="page-header-menu">
+            <a href="#" id="menu-search"><img src="image/menu-search.png"></a>
             <a href="#" id="menu-alert"><img src="image/menu-alert.png"></a>
             <a href="#" id="menu-quest"><img src="image/menu-quest.png"></a>
             <a href="#" id="menu-user"><img src="image/menu-user.png"></a>
@@ -93,13 +94,30 @@
     </section>
 
     <section id="left-container">
-        <div class="box-model quest-card">
-            <form name="request_quest">
-                <input type="text" placeholder="asd">
-                <input type="text">
-                <input type="submit" value="퀘스트 요청하기">
-            </form>
-
+        <div class="box-model quest-request">
+            <div class="quest-card-padding-wrapper">
+                <article class="quest-card-article">
+                    <img class="quest-image" src="image/quest.png">
+                    <blockquote class="quest-reward-text">
+                        <form>
+                            <input type="text" placeholder="퀘스트를 입력하세요.">
+                        </form>
+                    </blockquote>
+                    <img class="reward-image" src="image/reward.png">
+                    <blockquote class="quest-reward-text">
+                        <form>
+                            <input type="text" placeholder="완료보상을 입력하세요.">
+                        </form>
+                    </blockquote>
+                    <form>
+                        <textarea class="quest-content" placeholder="무엇이 필요하신가요?"></textarea>
+                    </form>
+                </article>
+            </div>
+            <footer class="quest-request-footer">
+                <div class="quest-request-location">위치를 선택하세요</div>
+                <div class="quest-more quest-request-text">퀘스트 공표</div>
+            </footer>
         </div>
         <div class="box-model quest-card">
             <div class="quest-card-padding-wrapper">
@@ -156,8 +174,7 @@
                     <p>이렇게 생긴 제 강아지를 찾아주세요..
                         <br/>제발 ㅠㅠ 부탁드립니다.. 사례는 이정도면 되겠죠?
                     </p>
-                    <img width="570"
-                         src="http://www.asrgo.com/files/attach/images/8131/104/063/Labrador_Retriever_puppies.jpg">
+                    <img class="quest-content-img" src="http://www.asrgo.com/files/attach/images/8131/104/063/Labrador_Retriever_puppies.jpg">
                 </article>
             </div>
             <footer class="quest-card-footer">

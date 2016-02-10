@@ -9,7 +9,7 @@ error_reporting(E_ALL);
 <html>
 
 <head>
-    <title>Questian :: Login</title>
+    <title>Questian :: SignUp</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
@@ -20,10 +20,8 @@ error_reporting(E_ALL);
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/content.css">
 
-    <script src="js/nearQuestianFix.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.easing.min.js"></script>
-    <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=22e1ead8e7bd6f1fc4308eaa6c150de7"></script>
     <!--[if lte IE 9]>
         <script src="js/IE9.js"></script>
         <script src="js/html5shiv.min.js"></script>
@@ -40,14 +38,21 @@ error_reporting(E_ALL);
 
         <div id="page-header-menu">
 
-            <?php
+        </div>
+    </div>
+</header>
 
-            include_once 'api/classes/DBConnect.php';
-            include_once 'api/classes/Auth.php';
+<article id="content">
+    <div class="signup-form">
+        <?php
 
-            $db = new DBConnect();
-            $mysqli = $db->mysqli;
+        include 'api/classes/DBConnect.php';
+        include 'api/classes/Auth.php';
 
+        $db = new DBConnect();
+        $mysqli = $db->mysqli;
+
+        if (isset($_POST['signup'])) {
             $id = $mysqli->real_escape_string($_POST['id']);
             $password = $mysqli->real_escape_string($_POST['password']);
             $email = $mysqli->real_escape_string($_POST['email']);
@@ -55,26 +60,27 @@ error_reporting(E_ALL);
             $is_signup = isset($_POST['signup']);
 
             if (!empty($id) && !empty($password) && !empty($email) && !empty($username)) {
-                $auth = new Auth($id, $password, $username, $email);
-                $auth->register();
+                $auth = new Auth();
+                $result = $auth->signup($id, $password, $username, $email);
+                if ($result) {
+                    echo "회원가입 성공";
+                } else {
+                    echo "회원가입 실패";
+                }
+            } else {
+                echo "회원가입 실패";
             }
-
-            ?>
-            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
-                <input type="text" name="id" placeholder="아이디"><br>
-                <input type="password" name="password" placeholder="비밀번호"><br>
-                <input type="password" placeholder="비밀번호 확인"><br>
-                <input type="text" name="username" placeholder="사용자 이름"><br>
-                <input type="email" name="email" placeholder="이메일"><br>
-                <input type="submit" name="signup" value="회원가입">
-            </form>
-        </div>
-
+        }
+        ?>
+        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
+            <input type="text" name="id" placeholder="아이디"><br>
+            <input type="password" name="password" placeholder="비밀번호"><br>
+            <input type="password" placeholder="비밀번호 확인"><br>
+            <input type="text" name="username" placeholder="사용자 이름"><br>
+            <input type="email" name="email" placeholder="이메일"><br>
+            <input type="submit" name="signup" value="회원가입">
+        </form>
     </div>
-</header>
-
-<article id="content">
-
 </article>
 </body>
 

@@ -1,30 +1,18 @@
 <?php
 include '../DBConnect.php';
+include '../classes/Auth.php';
 
-$param_id = $_POST['id'];
-$param_pw = $_POST['password'];
+$db = new DBConnect();
+$mysqli = $db->mysqli;
+$auth = new Auth();
 
-$id = $mysqli->real_escape_string($param_id);
+$id = $mysqli->real_escape_string($_POST['id']);
 $password = $mysqli->real_escape_string($_POST['password']);
 
-//bcrypt function
-//password encrypt
+$signin = $auth->signin($id, $password);
 
-$signin_query = "SELECT * FROM users WHERE id LIKE '$id'";
-
-$result = $mysqli->query($signin_query);
-
-$row = $result->fetch_array(MYSQLI_ASSOC);
-
-if (!empty($param_id) && !empty($param_pw)) {
-
-    if (password_verify($password, $row['password'])) {
-        echo "login succeed";
-    } else {
-        echo "login failed";
-        echo "cause : " . $mysqli->error;
-    }
-
+if ($signin) {
+    echo "login succeed";
 } else {
-    echo "LESS PARAMETERS";
+    echo "login failed";
 }

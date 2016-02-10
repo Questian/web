@@ -19,6 +19,11 @@ body {
     color: #00bcd9;
 }
 
+.quest-request-text {
+    font-weight: bold;
+    color: #fff;
+}
+
 ::selection{
     background-color: #c0ecf9;
 }
