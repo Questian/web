@@ -7,9 +7,9 @@
  * Time: 오후 1:49
  */
 
-error_reporting(E_ALL);
-ini_set('error_reporting', E_ALL | E_STRICT);
-ini_set('display_errors', 1);
+//error_reporting(E_ALL);
+//ini_set('error_reporting', E_ALL | E_STRICT);
+//ini_set('display_errors', 1);
 
 class DBConnect
 {

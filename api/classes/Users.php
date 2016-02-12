@@ -11,28 +11,30 @@ class Users
     private $uid;
     private $token;
     private $db;
-    private $mysqli;
+    private $pdo;
 
     function __construct($uid, $token)
     {
         $this->uid = $uid;
         $this->token = $token;
         $this->db = new DBConnect();
-        $this->mysqli = $this->db->mysqli;
+        $this->pdo = $this->db->getPDO();
 
     }
 
     function request(Quest $quest){
         $query = "INSERT INTO quests(uid, quest, reward, content, img) VALUES(:uid, :quest, :reward, :content, :img)";
 
-        $stmt = $this->mysqli->prepare($query);
-        $stmt->bind_param(':uid', $this->uid);
-        $stmt->bind_param(':quest', $quest->getQuest());
-        $stmt->bind_param(':reward', $quest->getReward());
-        $stmt->bind_param(':content', $quest->getReward());
-        $stmt->bind_param(':img', $quest->getImg());
+        $stmt = $this->pdo->prepare($query);
+        $stmt->bindParam(':uid', $this->uid);
+        $stmt->bindParam(':quest', $quest->getQuest());
+        $stmt->bindParam(':reward', $quest->getReward());
+        $stmt->bindParam(':content', $quest->getContent());
+        $stmt->bindParam(':img', $quest->getImg());
 
         $stmt->execute();
+
+        return $stmt;
     }
 
 }

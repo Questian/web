@@ -63,6 +63,7 @@ error_reporting(E_ALL);
 
         if ($signin) {
             echo "로그인 성공";
+            $auth->redirect('index.php');
         } else {
             echo "로그인 실패";
         }

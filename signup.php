@@ -1,7 +1,5 @@
 <?php
 session_start();
-include 'api/DBConnect.php';
-
 error_reporting(E_ALL);
 ?>
 
@@ -62,10 +60,10 @@ error_reporting(E_ALL);
             if (!empty($id) && !empty($password) && !empty($email) && !empty($username)) {
                 $auth = new Auth();
                 $result = $auth->signup($id, $password, $username, $email);
-                if ($result) {
+                if (!$result->errorCode()) {
                     echo "회원가입 성공";
                 } else {
-                    echo "회원가입 실패";
+                    echo "회원가입 실패 ERRORCODE :" . $result->errorCode();
                 }
             } else {
                 echo "회원가입 실패";
@@ -81,7 +79,19 @@ error_reporting(E_ALL);
             <input type="submit" name="signup" value="회원가입">
         </form>
     </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Questian - Rectangle -->
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:336px;height:280px"
+         data-ad-client="ca-pub-2557364464552376"
+         data-ad-slot="4320844043"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 </article>
+<div>
+    asdf
+</div>
 </body>
 
 </html>

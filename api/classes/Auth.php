@@ -33,7 +33,7 @@ class Auth
 //            if (count($row) > 0) {
             if (password_verify($password, $row['password'])) {
                 $_SESSION['user_session'] = $row['id'];
-
+//
 //                if(empty($row['token'])){
 //                    $this->get_token();
 //                }
@@ -44,6 +44,24 @@ class Auth
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
+    }
+
+    public function is_loggedin(){
+        if(isset($_SESSION['user_session'])){
+            return true;
+        }
+    }
+
+    public function redirect($url)
+    {
+        header("Location: $url");
+    }
+
+    public function logout()
+    {
+        session_destroy();
+        unset($_SESSION['user_session']);
+        return true;
     }
 
     public function signup($id, $password, $username, $email)
@@ -71,8 +89,8 @@ class Auth
     }
 
     public function get_token(){
-        $provider = new OAuthProvider();
-        $token = $provider -> generateToken('21', true);
+//        $provider = new OAuthProvider();
+//        $token = $provider -> generateToken('21', true);
 //        $token = bin2hex(random_bytes(36));
         $token_query = "INSERT INTO users(token) VALUES(:token)";
         $token_stmt = $this-> dbh->prepare($token_query);

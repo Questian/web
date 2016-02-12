@@ -20,12 +20,13 @@
     #search-wrapper {
         display: inline-block;
         margin-top: 12px;
+        margin-left: 12px;
         box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
         vertical-align: top;
     }
 
     #search-field{
-        width: 560px;
+        width: 590px;
     }
 
     #menu-search{
@@ -42,12 +43,13 @@
     #search-wrapper {
         display: inline-block;
         margin-top: 12px;
+        margin-left:10px;
         box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
         vertical-align: top;
     }
 
     #search-field{
-        width: 350px;
+        width: 360px;
     }
 
     #menu-search{
@@ -85,7 +87,8 @@
 
 #page-header-logo-image {
     width: 120px;
-    margin-left: 5px;
+    margin-left: 10px;
+    margin-right: 5px;
 }
 
 /*#search-wrapper {*/
@@ -98,12 +101,25 @@
 #page-header-menu {
     display: inline-block;
     float: right;
-    margin-top: 18px;
+    margin-top: 10px;
+    margin-right:10px;
 }
 
-#page-header-menu img {
-    width: 20px;
-    margin-right: 24px;
+#page-header-menu a  {
+    margin-left: 24px;
+    font-size: 22px;
+    -webkit-font-smoothing: antialiased;
+    color: #eee;
+}
+
+#page-header-menu a:hover{
+    color: #00bcd9;
+}
+
+#page-header-menu .profile-image {
+    margin-top: 2px;
+    width: 35px;
+    height: 35px;
 }
 
 @media (max-width: 759px) and (min-width: 480px) {
@@ -123,25 +139,27 @@
     outline: none;
     font-size: 14px;
     background-color: #eee;
+    -webkit-appearance: none;
 }
 
 #search-field::-webkit-input-placeholder {
-    font-family: "Noto sans Korean";
+    font-family: "Noto sans Korean", serif;
     font-size: 14px;
     color: #bdbdbd;
 }
 
 #search-field::-moz-placeholder {
-    font-family: "Noto sans Korean";
+    font-family: "Noto sans Korean", serif;
     font-size: 14px;
     color: #bdbdbd;
 }
 
-#search-field::-ms-input-placeholder {
-    font-family: "Noto sans Korean";
+#search-field:-ms-input-placeholder {
+    font-family: "Noto sans Korean", serif;
     font-size: 14px;
     color: #bdbdbd;
 }
+
 
 #search-button {
     box-sizing: border-box;

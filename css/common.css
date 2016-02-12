@@ -10,6 +10,12 @@ body {
     letter-spacing: -1px;
 }
 
+
+
+.request-box{
+    border-left: px solid #00bcd9;
+}
+
 .clear {
     clear: both;
 }
@@ -21,7 +27,9 @@ body {
 
 .quest-request-text {
     font-weight: bold;
-    color: #fff;
+    color: #00bcd9;
+    border: 0;
+    background-color: #fff;
 }
 
 ::selection{
