@@ -12,7 +12,6 @@ session_save_path('./session');
 $db = new DBConnect();
 $mysqli = $db->mysqli;
 $pdo = $db->getPDO();
-
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +22,6 @@ $pdo = $db->getPDO();
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <meta name="theme-color" content="#00bcd9">
-
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/noto.css">

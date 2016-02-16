@@ -50,29 +50,32 @@ error_reporting(E_ALL);
     <div class="auth-form">
         <?php
 
-        $db = new DBConnect();
-        $mysqli = $db->mysqli;
+        if(isset($_POST['signin'])) {
 
-        $param_id = $_POST['id'];
-        $param_pw = $_POST['password'];
-        $id = $mysqli->real_escape_string($param_id);
-        $password = $mysqli->real_escape_string($_POST['password']);
+            $db = new DBConnect();
+            $mysqli = $db->mysqli;
 
-        $auth = new Auth();
-        $signin = $auth->signin($id, $password);
+            $param_id = $_POST['id'];
+            $param_pw = $_POST['password'];
+            $id = $mysqli->real_escape_string($param_id);
+            $password = $mysqli->real_escape_string($_POST['password']);
 
-        if ($signin) {
-            echo "로그인 성공";
-            $auth->redirect('index.php');
-        } else {
-            echo "로그인 실패";
+            $auth = new Auth();
+            $signin = $auth->signin($id, $password);
+
+
+            if ($signin) {
+                echo "로그인 성공";
+                $auth->redirect('index.php');
+            } else {
+                echo "로그인 실패 ERRORCODE :" .$signin->error;
+            }
         }
-
         ?>
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
             <input type="text" name="id" placeholder="아이디를 입력해 주세요."></br>
             <input type="password" name="password" placeholder="비밀번호를 입력해 주세요."></br>
-            <input type="submit" value="로그인">
+            <input type="submit" name="signin"value="로그인">
         </form>
     </div>
 </article>

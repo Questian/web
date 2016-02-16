@@ -37,4 +37,14 @@ class Users
         return $stmt;
     }
 
+    function location($latitude,$longtitude){
+
+        $query = "UPDATE users SET latitude = :latitude, longtitude = :longtitude WHERE uid = :uid";
+
+        $stmt = $this->pdo->prepare($query);
+        $stmt->bindParam(':latitude', $latitude);
+        $stmt->bindParam(':longtitude', $longtitude);
+        $stmt->bindParam(':uid', $this->uid);
+    }
+
 }

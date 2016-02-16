@@ -295,27 +295,30 @@
     margin-left: 10px;
 }
 
-.signup-form input {
+.auth-form input {
     width: 350px;
     height: 30px;
     margin-bottom: 10px;
     font-size: 15px;
     -webkit-appearance: none;
+    border: 0;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
-.signup-form input[type=submit] {
+
+.auth-form input[type=submit] {
+    width: 360px;
     height: 50px;
     background-color: #FFF;
     color: #00BDD4;
     font-size: 15px;
-    padding: 0;
     border: none;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
     cursor: pointer;
-    -webkit-appearance: none;
 }
 
-.signup-form input[type=submit]:hover :active {
+.auth-form input[type=submit]:hover :active {
     -webkit-transition: all 0.2s;
     transition: all 0.2s;
     background-color: #00BDD4;

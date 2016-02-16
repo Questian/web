@@ -15,10 +15,8 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/content.css">
 
-    <script src="js/nearQuestianFix.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.easing.min.js"></script>
-    <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=22e1ead8e7bd6f1fc4308eaa6c150de7"></script>
     <!--[if lte IE 9]>
         <script src="js/IE9.js"></script>
         <script src="js/html5shiv.min.js"></script>
@@ -52,12 +50,39 @@
 </header>
 
 <article id="content">
-        <section id="find-criteria" class="box-model">
-            <a href="#" class="by-distance button active">일반 설정</a>
-            <a href="#" class="by-ratedscore button">보안 설정</a>
-            <a href="#" class="by-recently button">위치 설정</a>
-            <div id="daum-map"></div>
-        </section>
+    <section id="find-criteria" class="box-model">
+        <a href="#" class="by-distance button active">일반 설정</a>
+        <a href="#" class="by-ratedscore button">보안 설정</a>
+        <a href="#" class="by-recently button">위치 설정</a>
+        <div id="setting">
+            <h2>계정</h2>
+            <p>기본 계정과 언어 설정을 변경합니다.</p>
+            <form>
+                <div id="id-fieldset">
+                    아이디 <input type="text"value="endless_hack"><br>
+                    https://questian.us/endless_hack
+                </div>
+                <div id="email-fieldset">
+                    이메일 주소 <input type="email" value="ysw0094@gmail.com"><br>
+                    이메일은 공개되지 않습니다.
+                </div>
+                <div id="lang-fieldset">
+                    언어 <select>
+                        <option value="lang-ko">Korean (한국어)</option>
+                    </select><br>
+                    퀘스티안 번역 프로젝트에 참가해보시겠어요?
+                </div>
+                <div id="time-fieldset">
+                    시간대 <select>
+                        <option value="time-zone-seoul">(GMT+09:00) Seoul</option>
+                    </select><br>
+                    시간대에 맞추어 퀘스트가 정렬됩니다.
+                </div>
+                <h2>퀘스트</h2>
+                <input type="submit" value="변경사항 저장"/>
+            </form>
+        </div>
+    </section>
 </article>
 </body>
 
