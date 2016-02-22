@@ -1,4 +1,4 @@
-[ Questian ] [http://questian.narin.us]
+[ Questian ] http://questian.narin.us
 
 
 Web Programming Study 염승우, 윤신필립, 최성국
