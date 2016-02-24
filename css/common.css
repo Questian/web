@@ -1,4 +1,3 @@
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 html,
 body {
     width: 100%;
@@ -6,13 +5,11 @@ body {
     margin: 0;
     padding: 0;
     background-color: #eee;
-    font-family: "Noto Sans Korean";
+    font-family: 'Apple SD Gothic Neo', 'NanumGothic', '나눔고딕', '맑은 고딕', sans-serif;
     letter-spacing: -1px;
 }
 
-
-
-.request-box{
+.request-box {
     /*border-left: px solid #00bcd9;*/
 }
 

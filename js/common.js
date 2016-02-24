@@ -1,4 +1,8 @@
-<script type="text/javascript">
+$(document).ready(function(){
+    $.toast.config.align = 'right';
+    $.toast.config.width = 400;
 
-
-</script>
+    $('button').click(function(){
+        createToast($(this).attr('class'));
+    });
+});

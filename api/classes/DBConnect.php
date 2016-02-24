@@ -16,7 +16,7 @@ class DBConnect
     public $mysqli;
     private $host = "localhost";
     private $user = "root";
-    private $password = "Asdf25896!!";
+    private $password = "asdf25896";
     private $db = "questian";
 
     function __construct()
@@ -44,7 +44,12 @@ class DBConnect
     }
 
     public function getPDO(){
-        return new PDO('mysql:host='.$this->host.';dbname='.$this->db, $this->user, $this->password, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+        return new PDO(
+            'mysql:host='.$this->host.
+            ';dbname='.$this->db,
+            $this->user,
+            $this->password,
+            array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
     }
 
 }

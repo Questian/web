@@ -20,9 +20,9 @@ function showPosition(position) {
 
     var map = new daum.maps.Map(container, options);
 
-    var content = "<p>당신의 위치</p>";
+    var content = "<p class='marker'>당신의 위치</p>";
 
-    var location = new daum.maps.LatLng()
+    var location = new daum.maps.LatLng(latitude, longtitude);
 
     var customOverlay = new daum.maps.CustomOverlay({
         position: location,

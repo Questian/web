@@ -43,7 +43,7 @@
     #search-wrapper {
         display: inline-block;
         margin-top: 12px;
-        margin-left:10px;
+        margin-left: 10px;
         box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
         vertical-align: top;
     }
@@ -102,17 +102,21 @@
     display: inline-block;
     float: right;
     margin-top: 10px;
-    margin-right:10px;
+    margin-right: 10px;
 }
 
-#page-header-menu a  {
+#page-header-menu a {
     margin-left: 20px;
     font-size: 22px;
     -webkit-font-smoothing: antialiased;
     color: #eee;
 }
 
-#page-header-menu a:hover{
+#page-header-menu i {
+    margin-top: 10px;
+}
+
+#page-header-menu a:hover {
     color: #00bcd9;
 }
 
@@ -159,7 +163,6 @@
     font-size: 14px;
     color: #bdbdbd;
 }
-
 
 #search-button {
     box-sizing: border-box;
