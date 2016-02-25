@@ -53,6 +53,16 @@ class Request
     }
 
 
+    function getQuest($qid){
+        $query = "SELECT * FROM quests WHERE qid = :qid LIMIT 1";
+        $stmt = $this->pdo->prepare($query);
+
+        $stmt->bindParam(':qid', $qid);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $row;
+    }
+
     function getQuestAll(){
         $query = "SELECT * FROM quests order by qid DESC";
         $stmt = $this->pdo->prepare($query);
@@ -75,6 +85,45 @@ class Request
         $ret->setLongtitude($row['longtitude']);
         $ret->setImg($row['img']);
         return $ret;
+    }
+
+    public function getGeoLocation($qid){
+
+        $query="SELECT * FROM quests WHERE qid = :qid LIMIT 1";
+        $stmt = $this->pdo->prepare($query);
+        $stmt->bindParam(":qid", $qid);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $url = "http://maps.googleapis.com/maps/api/geocode/json?latlng=".$row['latitude'].",".$row['longtitude']. "&sensor=true&language=ko";
+
+        $user_agent = array(
+            'http'=>array(
+                'method'=>'GET',
+                'header'=> 'Accept-language: ko\r\n'
+            )
+        );
+
+        $context = stream_context_create($user_agent);
+
+        $data = @file_get_contents($url, false, $context);
+        $json = json_decode($data,true);
+
+//        echo $url;
+
+//        $country = '';
+//        $city = '';
+//        $street = '';
+
+        if(is_array($json) && $json['status'] == "OK")
+        {
+
+            $city = $json['results']['0']['address_components']['2']['long_name'];
+            $country = $json['results']['0']['address_components']['3']['long_name'];
+            $street = $json['results']['0']['address_components']['1']['long_name'];
+
+            return $country." ".$city. " ". $street;
+        }
     }
 
 }

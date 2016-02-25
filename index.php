@@ -20,6 +20,9 @@ if(!$auth->is_loggedin()){
 
 $uid = $_SESSION['user_session'];
 $request = new Request($uid);
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -55,29 +58,8 @@ $request = new Request($uid);
 </head>
 
 <body>
-<header id="page-header">
-    <div id="page-header-wrapper">
-        <a id="page-header-logo" href="#">
-            <img id="page-header-logo-image" src="image/logo.png" border="0">
-        </a>
 
-        <div id="search-wrapper">
-            <input id="search-field" type="search" placeholder="검색어를 입력해 주세요.">
-            <button id="search-button" type="submit">
-                <img id="search-button-image" src="image/search-button.png">
-            </button>
-        </div>
-
-        <div id="page-header-menu">
-            <img class="profile-image margin-fix" src="<?php echo $request->getUser($uid)->getImg()?>">
-            <a href="#" id="menu-alert"><i class="fa fa-bell"></i></a>
-            <!--            <a href="#" id="menu-user"><img src="image/menu-user.png"></a>-->
-            <a href="#" id="menu-search"><i class="fa fa-search"></i></a>
-            <a href="setting.php" id="menu-setting"><i class="fa fa-cog"></i></a>
-        </div>
-
-    </div>
-</header>
+<?php include 'header.php'?>
 
 <article id="content">
     <section id="find-criteria" class="box-model">
@@ -169,8 +151,11 @@ $request = new Request($uid);
 
                 <footer class="quest-request-footer">
                     <div class="quest-request-data">
-                        <i class="fa fa-map-marker"></i>
+                        <i class="fa fa-compass"></i>
                         <i class="fa fa-file-image-o"></i>
+                        <i class="fa fa-facebook-official"></i>
+                        <i class="fa fa-twitter-square"></i>
+                        <i class="fa fa-google-plus-square"></i>
                     </div>
                     <div class="quest-more quest-request-text">
                         <input class="quest-request-text" name="submit-quest" type="submit" value="공표">
@@ -188,7 +173,7 @@ $request = new Request($uid);
         <div class="box-model quest-card">
             <div class="quest-card-padding-wrapper">
                 <header class="quest-card-header">
-                    <div class="user-location"><span class="cyan-text">전라남도 목포 신안군</span> 근방</div>
+                    <div class="user-location"><span class="cyan-text"><?php echo $request->getGeoLocation($row['qid'])?></span> 근방</div>
                     <img class="profile-image" src="<?=$user->getImg()?>">
                     <div class="user-nickname"><?=$user->getUsername() .'('. $user->getId() . ')'?></div>
                     <div class="time-ago"><?=$row['date']?></div>
@@ -208,7 +193,7 @@ $request = new Request($uid);
             </div>
             <footer class="quest-card-footer">
                 <div class="quest-status">현재 진행중</div>
-                <div class="quest-more cyan-text">더 보기</div>
+                <div class="quest-more cyan-text"><a href="detail.php?qid=<?=$row['qid']?>">더 보기</a></div>
             </footer>
         </div>
 

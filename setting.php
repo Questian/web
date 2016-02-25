@@ -1,9 +1,13 @@
 <?php
 include 'api/classes/Auth.php';
+include 'api/classes/Request.php';
 
 session_start();
 
 $auth = new Auth();
+
+$uid = $_SESSION['user_session'];
+$request = new Request($uid);
 ?>
 
 <!DOCTYPE html>
@@ -34,29 +38,7 @@ $auth = new Auth();
 </head>
 
 <body>
-<header id="page-header">
-    <div id="page-header-wrapper">
-        <a id="page-header-logo" href="index.php">
-            <img id="page-header-logo-image" src="image/logo.png" border="0">
-        </a>
-
-        <div id="search-wrapper">
-            <input id="search-field" type="search" placeholder="검색어를 입력해 주세요.">
-            <button id="search-button" type="submit">
-                <img id="search-button-image" src="image/search-button.png">
-            </button>
-        </div>
-
-        <div id="page-header-menu">
-            <img class="profile-image margin-fix" src="http://i.imgur.com/ySlwZ4Z.png">
-            <a href="#" id="menu-alert"><i class="fa fa-bell"></i></a>
-            <!--            <a href="#" id="menu-user"><img src="image/menu-user.png"></a>-->
-            <a href="#" id="menu-search"><i class="fa fa-search"></i></a>
-            <a href="setting.php" id="menu-setting"><i class="fa fa-cog cyan-text"></i></a>
-        </div>
-
-    </div>
-</header>
+<?php include 'header.php'?>
 <article id="content">
     <section id="find-criteria" class="box-model">
         <div id="setting-tab" class="setting-tab">
@@ -126,14 +108,14 @@ $auth = new Auth();
                 <?php
                 if(isset($_POST['logout'])){
                     $auth->logout();
-                    $auth->redirect('/auth/index.php');
+                    $auth->redirect('auth/index.php');
                 }
                 ?>
                 <label for="time-zone-field">로그아웃</label>
                 <div class="dropdown">
                 </div>
                 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
-                    <input type="submit" value="지금 이 계정을 로그아웃 합니다." name="logout">
+                    <input type="submit" value="지금 이 계정을 로그아웃 합니다." name="logout" onclick="window.location = 'index.php'">
                 </form>
             </div>
         </div>

@@ -61,4 +61,5 @@ class Quest
     {
         return $this->uid;
     }
+
 }
