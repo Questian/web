@@ -7,17 +7,25 @@
  * Time: 오후 1:49
  */
 
+//if you are debugging, plz uncomment this comment
+//so you can see error reporting
+
 //error_reporting(E_ALL);
 //ini_set('error_reporting', E_ALL | E_STRICT);
 //ini_set('display_errors', 1);
 
+define('DB_HOST', "localhost");
+define('DB_USERNAME', "root");
+define('DB_PASSWORD', "asdf25896");
+define('DB_NAME', "questian");
+
 class DBConnect
 {
     public $mysqli;
-    private $host = "localhost";
-    private $user = "root";
-    private $password = "asdf25896";
-    private $db = "questian";
+    private $host = DB_HOST;
+    private $user = DB_USERNAME;
+    private $password = DB_PASSWORD;
+    private $db = DB_NAME;
 
     function __construct()
     {
@@ -32,17 +40,6 @@ class DBConnect
         }
     }
 
-    /**
-     * @param $query
-     */
-    function query($query)
-    {
-        $this->mysqli->query($query);
-        if ($this->mysqli->errno) {
-            echo "QUERY ERROR : %s", $this->mysqli->error;
-        }
-    }
-
     public function getPDO(){
         return new PDO(
             'mysql:host='.$this->host.
@@ -50,6 +47,10 @@ class DBConnect
             $this->user,
             $this->password,
             array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+    }
+
+    public function getMysqli(){
+        return $this->mysqli;
     }
 
 }

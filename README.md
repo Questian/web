@@ -1,6 +1,4 @@
-[ Questian ] http://questian.narin.us
-
-
+[ Questian ]
 Web Programming Study 염승우, 윤신필립, 최성국
 
 - 서비스 목적

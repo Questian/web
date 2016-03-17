@@ -149,7 +149,7 @@
     height: 40px;
     margin-right: 10px;
     border-radius: 50%;
-    background-color: gray;
+    border: 2px solid #eee;
 }
 
 .user-nickname {
@@ -220,7 +220,7 @@
     box-sizing: border-box;
     height: 50px;
     padding: 0 20px 0 20px;
-    background-color: #eee;
+    background-color: #ECEFF1;
 }
 
 .quest-request-footer {
@@ -246,7 +246,7 @@
     float: left;
     font-size: 12px;
     line-height: 50px;
-    color: #424242;
+    color: #607D8B;
 }
 
 .quest-more {
@@ -264,7 +264,7 @@
 #near-questian-title {
     width: 100%;
     height: 50px;
-    background-color: #F5F5F5;
+    background-color: #ECEFF1;
     color: #00bcd9;
     font-size: 14px;
     font-weight: 900;
@@ -297,7 +297,7 @@
 
 .auth-form {
     width: 200px;
-    margin: 0 auto 0 auto;
+    margin: 10px auto 0 auto;
 }
 
 .auth-form input {

@@ -12,7 +12,6 @@ $db = new DBConnect();
 $mysqli = $db->mysqli;
 $pdo = $db->getPDO();
 
-
 $auth = new Auth();
 if(!$auth->is_loggedin()){
     $auth->redirect("/auth/index.php");
@@ -20,8 +19,6 @@ if(!$auth->is_loggedin()){
 
 $uid = $_SESSION['user_session'];
 $request = new Request($uid);
-
-
 
 ?>
 

@@ -1,7 +1,7 @@
 #page-header-auth{
     display: inline-block;
     float: right;
-    margin-top: 15px;
+    margin-top: 18px;
     margin-right: 10px;
 }
 
@@ -13,6 +13,6 @@
     background-color: #E0F7FA;
 }
 #page-header-auth i{
-    font-size: 25px;
+    font-size: 20px;
     color: #00BCD4;
 }
