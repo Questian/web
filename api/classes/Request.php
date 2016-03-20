@@ -8,19 +8,22 @@
  */
 
 include_once 'Model/User.php';
+include_once 'XssClean.php';
+
 
 class Request
 {
     private $uid;
     private $db;
     private $pdo;
+    private $xss_protection;
 
     function __construct($uid)
     {
         $this->uid = $uid;
         $this->db = new DBConnect();
         $this->pdo = $this->db->getPDO();
-
+        $this->xss_protection = new XssClean();
     }
 
     function requestQuest(Quest $quest)
@@ -33,6 +36,8 @@ class Request
         $stmt->bindParam(':reward', $quest->getReward());
         $stmt->bindParam(':content', $quest->getContent());
         $stmt->bindParam(':img', $quest->getImg());
+
+
 
         $stmt->execute();
 
@@ -115,4 +120,5 @@ class Request
             return $country . " " . $city . " " . $street;
         }
     }
+
 }
