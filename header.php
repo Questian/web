@@ -12,7 +12,15 @@
         </div>
 
         <div id="page-header-menu">
-            <img class="profile-image margin-fix" src="<?php echo $request->getUser($uid)->getImg()?>">
+            <div id="profile-dropdown">
+                <img class="profile-image margin-fix" src="<?php echo $request->getUser($uid)->getImg() ?>">
+                <div id="profile-dropdown-content">
+                    <a href="#">내 프로필</a>
+                    <a href="#">프로필 설정</a>
+                    <a href="#">위치 동기화</a>
+                    <a href="#">로그아웃</a>
+                </div>
+            </div>
             <a href="#" id="menu-alert"><i class="fa fa-bell"></i></a>
             <!--            <a href="#" id="menu-user"><img src="image/menu-user.png"></a>-->
             <a href="#" id="menu-search"><i class="fa fa-search"></i></a>

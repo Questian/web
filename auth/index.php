@@ -28,7 +28,6 @@ if($auth->is_loggedin()){
     <link rel="stylesheet" href="../css/setting.css">
     <link rel="stylesheet" href="../css/auth.css">
 
-
     <script src="../js/jquery.min.js"></script>
     <script src="../js/jquery.easing.min.js"></script>
     <!--[if lte IE 9]>
@@ -80,7 +79,6 @@ if($auth->is_loggedin()){
                         $auth = new Auth();
                         $signin = $auth->signin($id, $password);
 
-
                         if ($signin) {
                             echo "로그인 성공";
                             $auth->redirect('../index.php');
@@ -89,8 +87,8 @@ if($auth->is_loggedin()){
                         }
                     }
                     ?>
-                    <input type="text" name="id" placeholder="아이디를 입력해 주세요."></br>
-                    <input type="password" name="password" placeholder="비밀번호를 입력해 주세요."></br>
+                    <input type="text" name="id" placeholder="아이디를 입력해 주세요."><br>
+                    <input type="password" name="password" placeholder="비밀번호를 입력해 주세요."><br>
                 </div>
                 <div id="facebook-button">
                     <i id="facebook-font" class="fa fa-facebook"></i>

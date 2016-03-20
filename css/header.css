@@ -113,7 +113,7 @@
 }
 
 #page-header-menu i {
-    margin-top: 12px;
+    /*margin-top: 12px;*/
 }
 
 #page-header-menu a:hover {
@@ -179,4 +179,34 @@
 #search-button-image {
     width: 15px;
     margin-top: 3px;
+}
+
+
+#profile-dropdown{
+    position: relative;
+    display: inline-block;
+}
+
+#profile-dropdown-content{
+    display: none;
+    position: absolute;
+    width: 100px;
+    background: rgba(255,255,255,0.9);
+    padding-top: 5px;
+    margin-top: 40px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+#profile-dropdown-content a{
+    color: #607D8B;
+    display:block;
+    font-weight: bold;
+    font-size:12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: none;
+}
+
+#profile-dropdown:hover #profile-dropdown-content{
+    display:block;
 }

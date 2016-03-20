@@ -23,4 +23,4 @@ window.onload = function () {
             nearQuestian.style.marginTop = "0px";
         }
     }
-}
+};

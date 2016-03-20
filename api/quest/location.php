@@ -1,14 +1,17 @@
-<?php 
-include_once '../DBConnect.php';
+<?php
+include_once '../classes/DBConnect.php';
+include_once '../classes/Request.php';
 
-$param_x = $_POST['latitude'];
-$param_y = $_POST['longtitude'];
-$param_token = $_POST['token'];
+$db = new DBConnect();
+$mysqli = $db->getMysqli();
+$pdo = $db->getPDO();
 
-$query = mysql_query("UPDATE users SET location = GEOMFROMTEXT('POINT('$param_x' '$param_y')', 0) WHERE token LIKE $param_token");
-echo mysql_error();
-if($query)echo "SUCCEED";
-}else{
-	echo "ERROR : ". mysql_error();
-}
+$uid = $mysqli->real_escape_string($_POST['uid']);
+$latitude = $mysqli->real_escape_string($_POST['latitude']);
+$longtitude = $mysqli->real_escape_string($_POST['longtitude']);
+
+$request = new Request($uid);
+
+$request->location($latitude, $longtitude)
+
 ?>
